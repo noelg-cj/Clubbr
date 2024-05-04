@@ -26,8 +26,9 @@
   },
   methods: {
     handleSubmit() {
+      console.log(this.eventDetail)
       // Send POST request with Axios
-      axios.post('http://localhost:3000/event_list', this.eventDetail)
+      axios.post('http://localhost:5000/event_list', this.eventDetail)
         .then(response => {
           console.log('Post added successfully:', response.data);
           // Optionally, you can reset the form after successful submission
@@ -43,7 +44,7 @@
 <template>
     <h1>Add New Event</h1>
     <form>
-    <FormKit type="form" :actions="false">
+    <FormKit type="form" :actions="false" @submit="handleSubmit">
     <FormKit
       type="button"
       label="Home"
@@ -51,7 +52,7 @@
       
     />
     <h2>Help us with the following details to add an event</h2>
-    <FormKit type="multi-step" tab-style="progress" :allow-incomplete="false" @submit="handleSubmit">
+    <FormKit type="multi-step" tab-style="progress" :allow-incomplete="false">
     <FormKit type="step" name="Event Details">
     <h2>Let us begin with the event details</h2>
     <FormKit 
@@ -181,7 +182,7 @@
       />
 
       <template #stepNext>
-        <FormKit type="submit" />
+        <FormKit type="submit"/>
       </template>
     </FormKit>
   </FormKit>
