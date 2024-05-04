@@ -1,4 +1,43 @@
-<script setup>
+<script>
+  import axios from 'axios'
+  export default {
+  data() {
+    return{
+      eventDetail : {
+        clubName: '',
+        eventName: '',
+        date: '',
+        mode: '',
+        time: '',
+        venue: '',
+        regFee: 0,
+        certificates: '',
+        regLink: '',
+        regLastDate: '',
+        furthDetails: '',
+        mentor: '',
+        aboutMentor : '',
+        collab: '',
+        eventDesc: '',
+        organizerName:'',
+        phone: ""
+      },
+    };
+  },
+  methods: {
+    handleSubmit() {
+      // Send POST request with Axios
+      axios.post('http://localhost:3000/event_list', this.eventDetail)
+        .then(response => {
+          console.log('Post added successfully:', response.data);
+          // Optionally, you can reset the form after successful submission
+        })
+        .catch(error => {
+          console.error('Error adding post:', error);
+        });
+    }
+  }
+};
 </script>
 
 <template>
@@ -9,9 +48,10 @@
       type="button"
       label="Home"
       @click= "$router.push({ name: 'Home' })"
+      
     />
     <h2>Help us with the following details to add an event</h2>
-    <FormKit type="multi-step" tab-style="progress" :allow-incomplete="false">
+    <FormKit type="multi-step" tab-style="progress" :allow-incomplete="false" @submit="handleSubmit">
     <FormKit type="step" name="Event Details">
     <h2>Let us begin with the event details</h2>
     <FormKit 
@@ -19,17 +59,20 @@
         label="Organizing Club" 
         validation="required"
         placeholder="Enter Name of your club"
+        v-model="eventDetail.clubName"
       />
       <FormKit 
         type="text" 
         label="Event Name" 
         validation="required"
         placeholder="Enter Name of Event"
+        v-model="eventDetail.eventName"
       />
       <FormKit 
         type="date" 
         label="Date" 
         validation="required" 
+        v-model="eventDetail.date"
       />
       <FormKit 
         type="select" 
@@ -37,6 +80,7 @@
         placeholder="Select"
         :options="['Online','Offline']"
         validation="required"
+        v-model="eventDetail.mode"
       />
       <FormKit 
         type="time"
@@ -44,12 +88,14 @@
         placeholder="00:00" 
         validation="required" 
         help="Enter Time in 24 hours format"
+        v-model="eventDetail.time"
       />
       <FormKit 
         type="text" 
         label="Venue/Platform" 
         validation="required"
         placeholder="Enter the Venue"
+        v-model="eventDetail.Venue"
       />
     </FormKit>
 
@@ -61,23 +107,27 @@
         placeholder="Enter registration fee"
         validation="required"
         help="Enter 0, if the event is free of cost"
+        v-model="eventDetail.regFee"
       />
       <FormKit
         type="url"
         label="Registration Link"
         placeholder="https://www.example.com..."
         validation="required|url"
+        v-model="eventDetail.regLink"
       />
       <FormKit 
         type="radio" 
         label="Issue of certificates"
         :options="['Yes', 'No']"
         validation="required"
+        v-model="eventDetail.certificates"
       />
       <FormKit 
         type="date" 
         label="Last Date to register" 
-        validation="required" 
+        validation="required"
+        v-model="eventDetail.regLastDate"
       />
     </FormKit>
     <FormKit type="step" name="Speaker Details">
@@ -86,16 +136,19 @@
         type="text" 
         label="Speker/Mentor Name (Optional)"
         placeholder="Enter the speaker's/mentor's name"
+        v-model="eventDetail.mentor"
       />
       <FormKit
         type="textarea"
         label="About the speaker/mentor(Optional)"
         placeholder="Write a short description about the speaker"
+        v-model="eventDetail.aboutMentor"
       />
       <FormKit 
         type="textarea" 
         label="In colaboration with (Optional)"
         placeholder="Write about colaborators"
+        v-model="eventDetail.collab"
       />
     </FormKit>
 
@@ -106,12 +159,14 @@
         type="textarea" 
         label="Event Description (Optional)" 
         placeholder="Enter a short description of the event"
+        v-model="eventDetail.eventDesc"
       />
       <FormKit 
         type="text" 
         label="Name of Organizer" 
         validation="required"
         placeholder="Enter your name"
+        v-model="eventDetail.organizerName"
       />
       <FormKit
         type="tel"
@@ -122,6 +177,7 @@
           matches: 'Phone number must be 10 digits long',
         }"
         validation-visibility="dirty"
+        v-model="eventDetail.phone"
       />
 
       <template #stepNext>
