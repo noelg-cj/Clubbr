@@ -34,15 +34,17 @@ Please ensure `npm` is installed on your PC.
   - axios: 1.6.8
 
 ## How to configure
-**Step 1**: Clone the repository to a folder of your choice.
-**Step 2**: Navigate to the root and run `npm i` to install the required dependencies.
+  **Step 1**: Clone the repository to a folder of your choice.
+  
+  **Step 2**: Navigate to the root and run `npm i` to install the required dependencies.
 Now, it's time to run them!
 ## How to Run
 The project isn't hosted anywhere yet. So, please follow the steps to run the development server.
 1. We host the JSON server first (the db.json file).
 
    **Step 1**: Navigate to `/src/data`.
-   **Step 2**:Run `npx json-server --watch db.json`.
+   
+   **Step 2**: Run `npx json-server --watch db.json`.
 3. Now, check the hosted link and paste the base url at `/src/config.js`.
 4. Lastly, we host the frontend.
    - Open a new terminal and navigate to the root.
