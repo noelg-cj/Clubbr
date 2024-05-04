@@ -1,0 +1,32 @@
+{
+    "event_list": [
+      { 
+        "id": 0,
+        "name": "hackathon",
+        "date": "25 May",
+        "mode": "Offline",
+        "time": "09:00",
+        "venue": "Seminar hall",
+        "regfee": 500,
+        "certificates": "yes",
+        "reglink": "somelink.com",
+        "furth_details": "biggest hackathon of 2024",
+        "mentor": "noel",
+        "collab": "google"
+      },
+      { 
+        "id": 1,
+        "name": "quiz",
+        "date": "20 May",
+        "mode": "Online",
+        "time": "15:00",
+        "venue": "CSE 105",
+        "regfee": 100,
+        "certificates": "yes",
+        "reglink": "quiz.com",
+        "furth_details": "smallest quiz of 2024",
+        "mentor": "akash",
+        "collab": ""
+      }
+    ]
+  }
