@@ -20,7 +20,7 @@
         collab: '',
         eventDesc: '',
         organizerName:'',
-        phone: ""
+        phone: ''
       },
     };
   },
@@ -94,7 +94,7 @@
         label="Venue/Platform" 
         validation="required"
         placeholder="Enter the Venue"
-        v-model="eventDetail.Venue"
+        v-model="eventDetail.venue"
       />
     </FormKit>
 
