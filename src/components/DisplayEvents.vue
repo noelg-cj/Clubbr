@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
-
+import config from '@/config';
+const apiUrl = `${config.apiBaseUrl}/event_list`;
 export default {
   data() {
     return {
@@ -13,10 +14,9 @@ export default {
   },
   methods: {
     fetchEvents() {
-      axios.get('http://localhost:3000/event_list')
+      axios.get(apiUrl)
         .then(response => {
           this.eventList = response.data;
-          console.log(this.eventList)
         })
         .catch(error => {
           console.error('Error fetching posts:', error);
@@ -25,7 +25,6 @@ export default {
     randomColor(organizer) {
       const r = () => Math.floor(256 * Math.random());
       const color = this.colorCache[organizer] || (this.colorCache[organizer] = `rgb(${r()}, ${r()}, ${r()})`);
-      console.log(`Color for ${organizer}: ${color}`);
       return color;
     },
   }

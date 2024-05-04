@@ -1,5 +1,7 @@
 <script>
 import axios from 'axios';
+import config from '@/config';
+const apiUrl = `${config.apiBaseUrl}/event_list`;
 
 export default {
  data() {
@@ -13,8 +15,7 @@ export default {
     methods: {
         fetchEventDetails() {
             const eventId = this.$route.params.id;
-            console.log(eventId);
-            axios.get('http://localhost:3000/event_list')
+            axios.get(apiUrl)
                 .then(response => {
                 const event = response.data.find(event => event.id === eventId);
                 if (event) {

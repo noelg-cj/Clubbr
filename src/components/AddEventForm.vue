@@ -1,5 +1,7 @@
 <script>
   import axios from 'axios'
+  import config from '@/config';
+  const apiUrl = `${config.apiBaseUrl}/event_list`;
   export default {
   data() {
     return{
@@ -27,9 +29,9 @@
   methods: {
     handleSubmit() {
       // Send POST request with Axios
-      axios.post('http://localhost:3000/event_list', this.eventDetail)
+      axios.post(apiUrl, this.eventDetail)
         .then(response => {
-          console.log('Post added successfully:', response.data);
+          console.log('Post added successfully:');
         })
         .catch(error => {
           console.error('Error adding post:', error);
