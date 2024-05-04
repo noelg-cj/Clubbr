@@ -40,10 +40,11 @@ Now, it's time to run them!
 ## How to Run
 The project isn't hosted anywhere yet. So, please follow the steps to run the development server.
 1. We host the JSON server first (the db.json file).
+
    **Step 1**: Navigate to `/src/data`.
    **Step 2**:Run `npx json-server --watch db.json`.
-2. Now, check the hosted link and paste the base url at `/src/config.js`.
-3. Lastly, we host the frontend.
+3. Now, check the hosted link and paste the base url at `/src/config.js`.
+4. Lastly, we host the frontend.
    - Open a new terminal and navigate to the root.
    - Run `npm run dev`
 Yay! The server is now running!
