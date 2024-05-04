@@ -14,6 +14,12 @@
     <FormKit type="multi-step" tab-style="progress" :allow-incomplete="false">
     <FormKit type="step" name="Event Details">
     <h2>Let us begin with the event details</h2>
+    <FormKit 
+        type="text" 
+        label="Organizing Club" 
+        validation="required"
+        placeholder="Enter Name of your club"
+      />
       <FormKit 
         type="text" 
         label="Event Name" 
