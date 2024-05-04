@@ -27,10 +27,24 @@
  - Embed video of project demo
 
 ## Libraries used
+Please ensure `npm` is installed on your PC.
   - Vue JS: Vue 3.4.21
+  - vue-router: 4.0.13
   - FormKit: 1.6.2
+  - axios: 1.6.8
 
 ## How to configure
-Instructions for setting up project
+**Step 1**: Clone the repository to a folder of your choice.
+**Step 2**: Navigate to the root and run `npm i` to install the required dependencies.
+Now, it's time to run them!
 ## How to Run
-Instructions for running
+The project isn't hosted anywhere yet. So, please follow the steps to run the development server.
+1. We host the JSON server first (the db.json file).
+   **Step 1**: Navigate to `/src/data`.
+   **Step 2**:Run `npx json-server --watch db.json`.
+2. Now, check the hosted link and paste the base url at `/src/config.js`.
+3. Lastly, we host the frontend.
+   - Open a new terminal and navigate to the root.
+   - Run `npm run dev`
+Yay! The server is now running!
+
