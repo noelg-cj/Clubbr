@@ -27,7 +27,7 @@
   methods: {
     handleSubmit() {
       // Send POST request with Axios
-      axios.post('http://localhost:5000/event_list', this.eventDetail)
+      axios.post('http://localhost:3000/event_list', this.eventDetail)
         .then(response => {
           console.log('Post added successfully:', response.data);
         })

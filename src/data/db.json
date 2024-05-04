@@ -1,7 +1,7 @@
 {
   "event_list": [
     {
-      "id": 0,
+      "id": "0",
       "clubName": "CSE Club",
       "eventName": "hackathon",
       "date": "25 May",
@@ -10,7 +10,7 @@
       "venue": "Seminar hall",
       "regFee": 500,
       "certificates": "yes",
-      "regLink": "somelink.com",
+      "regLink": "https://somelink.com",
       "regLastDate": "10 May",
       "furthDetails": "biggest hackathon of 2024",
       "mentor": "noel",
@@ -21,7 +21,7 @@
       "phone": "4566969420"
     },
     {
-      "id": 1,
+      "id": "1",
       "clubName": "Quiz Club",
       "eventName": "quiz",
       "date": "20 May",
@@ -60,6 +60,26 @@
       "organizerName": "org",
       "phone": "1526894653",
       "Venue": "stage"
+    },
+    {
+      "id": "4787",
+      "clubName": "Tinker Hub",
+      "eventName": "WORKOUT MANIAS",
+      "date": "2024-05-12",
+      "mode": "Offline",
+      "time": "07:00",
+      "venue": "Vigor gym",
+      "regFee": "200",
+      "certificates": "No",
+      "regLink": "https://example.com",
+      "regLastDate": "2024-05-08",
+      "furthDetails": "",
+      "mentor": "Ganesh",
+      "aboutMentor": "Very athletic",
+      "collab": "NIL",
+      "eventDesc": "Gym",
+      "organizerName": "Ganesh",
+      "phone": "2122343675"
     }
   ]
 }
