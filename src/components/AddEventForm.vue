@@ -26,12 +26,10 @@
   },
   methods: {
     handleSubmit() {
-      console.log(this.eventDetail)
       // Send POST request with Axios
       axios.post('http://localhost:5000/event_list', this.eventDetail)
         .then(response => {
           console.log('Post added successfully:', response.data);
-          // Optionally, you can reset the form after successful submission
         })
         .catch(error => {
           console.error('Error adding post:', error);
