@@ -1,6 +1,9 @@
 <script>
 import axios from 'axios';
 import config from '@/config';
+
+import 'primeicons/primeicons.css'
+
 const apiUrl = `${config.apiBaseUrl}/event_list`;
 
 export default {
@@ -33,49 +36,92 @@ export default {
 </script>
 
 <template>
-    <h1>Here we put the details of the chosen event</h1>
+    <!-- <h1>Here we put the details of the chosen event</h1>
     <p>Click to return to home</p>
-    <button class="home-btn" @click="$router.push({ name: 'Home' })">Home</button>
-    <button class="display-event-btn" @click="$router.push({ name: 'DisplayEvents' })">Display Events</button>
-    <div>
-       <p v-if ="event.collab === ''">Hello People! {{ event.clubName}} proudly presents to you</p>
-       <p class="intro" v-else>Hello People! {{ event.clubName}} in collaboration with {{ event.collab }} proudly presents to you</p>
-       <h1>{{ event.eventName }}</h1>
-       <h2>The details are as follows:</h2>
-       <p class="date">Date of Event: {{ event.date }}</p>
-       <p class="mode">Mode of conduct: {{ event.mode }}</p>
-       <p>Time: {{ event.time }}</p>
-       <p>Venue: {{ event.venue }}</p>
-       <p>Further Details</p>
-       <p>{{ event.furthDetails }}</p>
-       <p>Registration Fee: {{ event.regFee }}</p>
-       <p>Issue of certificates: {{ event.certificates }}</p>
-       <p>So without any further ado, hit the link below!</p>
-       <p>Registration Link: {{ event.regLink }}</p>
-       <p>Last Date to register: {{ event.regLastDate }}</p>
-       <p>About the Mentor</p>
-       <p class="mentorName">{{ event.mentor }}</p>
-       <p v-if="event.aboutMentor != ''">{{ event.aboutMentor }}</p>
-       <p>For further queries, contact:</p>
-       <p>{{ event.organizerName }}: {{ event.phone }}</p>
+    <button class="home-btn" @click="$router.push({ name: 'Home' })">Home</button> -->
+    <button class="display-event-btn" @click="$router.push({ name: 'DisplayEvents' })"><i class="pi pi-arrow-left"></i> Back</button> 
+    <div class="event-container">
+       <div>
+           <p class="intro" v-if ="event.collab === ''">{{ event.clubName}}</p>
+           <p class="intro" v-else>{{ event.clubName}} / {{ event.collab }}</p>
+           <h1 class="event-title">{{ event.eventName }}</h1>
+           <p class="mode">{{ event.mode }}</p>
+           <p class="date mt"><i class="pi pi-calendar"></i>  {{ event.date }}</p>
+            <p><i class="pi pi-clock"></i> {{ event.time }}</p>
+           <p><i class="pi pi-map-marker"></i> {{ event.venue }}</p>
+           <p class="mt">{{ event.furthDetails }}</p>
+           <p class="mt">Certificates issued: {{ event.certificates }}</p>
+           <div class="mentor-info mt">
+               <p class="medium">Mentor: </p>
+               <div>
+                   <p class="medium">{{ event.mentor }}</p>
+                   <p v-if="event.aboutMentor != ''">{{ event.aboutMentor }}</p>
+                </div>
+            </div>
+            <p class="mt">Last Date to register: {{ event.regLastDate }}</p>
+            <p class="">Registration Fee: {{ event.regFee }}</p>
+           <p class="medium mt">Contact:</p>
+           <p>{{ event.organizerName }}: {{ event.phone }}</p>
+           <a :href="event.regLink" target="_blank" class="reglink">Register</a>
+       </div>
     </div>
 </template>
 
 <style scoped>
-/* BS Styles: Badly needs an upgrade */
-.h1{
- color:white;
- text-align:center;
- font-size: 50%;
+.display-event-btn {
+    border: none;
+    font-size: 1rem;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
 }
-.intro{
-    color:antiquewhite;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+.display-event-btn:hover {
+    color: #9747FF;
+    text-decoration: underline
 }
-.date{
-    color:azure;
-    text-decoration: solid;
+.event-container {
+    width: 60%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #CBD5E1;
+    padding: 40px;
+    border-radius: 12px;
+}
+.event-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #9747FF;
+    font-weight: 500;
+}
+.mt {
+    margin-top: 24px;
+}
+.mentor-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.medium {
+    font-weight: 500;
+}
+.reglink {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    background: #9747FF;
+    padding: 10px 30px;
+    margin: 30px auto;
+    display: block;
+    width: fit-content;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.reglink:hover {
+    background: #7F1DFF;
 }
 </style>
    

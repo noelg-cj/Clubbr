@@ -138,7 +138,7 @@ export default {
 }
 
 .card-title{
-  font-family: 'Popins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   color: #9747FF;
 }
