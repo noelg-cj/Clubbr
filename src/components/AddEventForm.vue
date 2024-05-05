@@ -191,23 +191,6 @@
 </template>
 
 <style>
-h1{
-    color:aliceblue;
-    font-style:normal;
-    font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    text-align: center;
-}
-html,
-body {
-  min-height: 100%;
-  
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background: linear-gradient(to bottom right, #083b47, #011418);
-}
 
 form {
   box-sizing: border-box;
