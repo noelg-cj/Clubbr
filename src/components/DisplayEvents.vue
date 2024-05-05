@@ -34,8 +34,10 @@ export default {
 
 <template>
   <h1 class="events-header">Events</h1>
-  <p>Click to return to home</p>
-  <button class="home-btn" @click="$router.push({ name: 'Home' })">Home</button>
+  <p class="main-desc">Here is the list of top trending events happening at CET</p>
+  <button class="home-btn" @click="$router.push({ name: 'Home' })">
+    <img src="/public/logo.png" alt="Home" width=100 />
+  </button>
   <div class="cards-container">
       <!-- Event Cards -->
       <div class="event-card" v-for="event in eventList" :key="event.id">
@@ -73,11 +75,35 @@ export default {
 </template>
 
 <style scoped>
+.home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  font-size: 1rem;
+  color: #9747FF;
+}
+
+.home-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main-desc {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #374151;
+  font-family: 'Poppins';
+  margin-top: 10px;
+
+}
+
 .cards-container {
   padding: 0 30px;
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .organizer-name {
@@ -87,9 +113,9 @@ export default {
 }
 
 .events-header {
+  margin-top: 60px;
   text-align: center;
   font-size: 3rem;
-  margin-top: 20px;
   font-family: 'Playfair Display', sans-serif;
   font-weight: 500;
 }
@@ -169,13 +195,6 @@ export default {
 }
 
 .card-button:hover {
-}
-
-.organizer-info {
-}
-.dot {
-}
-.home-btn{
 }
 
 </style>
