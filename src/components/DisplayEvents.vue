@@ -42,7 +42,7 @@ export default {
         <div class="card-header">
           <div class="organizer-info">
             <span class="dot" :style="{ backgroundColor: randomColor(event.organizerName) }"></span>
-            <span class="organizer-name">{{ event.organizerName }}</span>
+            <span class="organizer-name">{{ event.clubName }}</span>
           </div>
           <h2 class="card-title">{{ event.eventName }}</h2>
         </div>
@@ -79,6 +79,13 @@ export default {
   flex-wrap: wrap;
   margin-top: 20px;
 }
+
+.organizer-name {
+  color: #374151;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
 .events-header {
   text-align: center;
   font-size: 3rem;
@@ -86,17 +93,22 @@ export default {
   font-family: 'Playfair Display', sans-serif;
   font-weight: 500;
 }
+
 .event-card {
   margin: 10px;
   width: 300px;
-  height: 300px;
+  height: 350px;
   border: 2px solid #CBD5E1;
   padding: 16px;
   border-radius: 8px;
 }
 
+.event-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
 .card-header {
-  height: 30%;
+  height: 20%;
 }
 
 .card-title{
@@ -106,7 +118,7 @@ export default {
 }
 
 .card-content {
-  height: 70%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -115,6 +127,7 @@ export default {
 .card-descr {
   margin: 10px 0 10px 0;
   color: #374151;
+  font-size: 0.9rem;
 }
 
 .dates-container {
