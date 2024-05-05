@@ -42,7 +42,7 @@
 </script>
 
 <template>
-    <h1>Add New Event</h1>
+    <h1 class="add-event">Add New Event</h1>
     <form>
     <FormKit type="form" :actions="false" @submit="handleSubmit">
     <FormKit
@@ -192,12 +192,19 @@
 
 <style>
 
+.add-event {
+  color: #333;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 1.5em;
+}
+
 form {
   box-sizing: border-box;
   background: white;
   padding: 1.0em;
   width: 40em;
-  margin: 2.5em auto;
+  margin: 0 auto;
   max-width: calc(100% - 4.5em);
   border-radius: 0.5em;
 }
