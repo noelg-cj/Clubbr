@@ -170,6 +170,7 @@ export default {
     padding: 5px 30px;
     border-radius: 8px;
     border: none;
+    cursor: pointer;
     background-color: #9747FF;
     color: white;
     font-family: 'Poppins';
@@ -195,6 +196,7 @@ export default {
 }
 
 .card-button:hover {
+  background-color: #7a1ff1;
 }
 
 </style>
