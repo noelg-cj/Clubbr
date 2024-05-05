@@ -1,11 +1,14 @@
 <template>
     <div class="home-container">
-        <h3 class="title">All of CET's Club Activities</h3>
-        <h3 class="title highlight">at one place!</h3>
-        <p class="main-para">With over 50+ clubs in CET, get ready to immerse yourself in a world of culture and tech!</p>
-        <div class="main-buttons">
-            <button class="add-event-btn" @click="$router.push({ name: 'AddEventForm' })">+ Add Event</button>
-            <button class="display-event-btn" @click="$router.push({ name: 'DisplayEvents' })">Display Events</button>
+        <img src="/public/logo.png" alt="CET Logo" class="logo" />
+        <div class="main-container">
+            <h3 class="title">All of CET's Club Activities</h3>
+            <h3 class="title highlight">at one place!</h3>
+            <p class="main-para">With over 50+ clubs in CET, get ready to immerse yourself in a world of culture and tech!</p>
+            <div class="main-buttons">
+                <button class="add-event-btn" @click="$router.push({ name: 'AddEventForm' })">+ Add Event</button>
+                <button class="display-event-btn" @click="$router.push({ name: 'DisplayEvents' })">Display Events</button>
+            </div>
         </div>
     </div>
 </template>
@@ -16,13 +19,22 @@
 
 <style scoped>
     .home-container {
+        height: 100vh;
+        background: url('/public/background.png') center center / cover;
+    }
+
+    .logo {
+        padding: 20px 0px 0px 20px;
+    }
+
+    .main-container {
+        height: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-        background: url('/public/background.png') center center / cover;
     }
+
     .title {
         font-family: 'Playfair Display', sans-serif;
         font-weight: 500;
