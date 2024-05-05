@@ -19,12 +19,10 @@
 4. [Nanditha Dev](https://github.com/NandithaDev)
 
 ## Link to product walkthrough
-[link to video](Link Here)
+[link to video](https://drive.google.com/file/d/1vz8dIAvQt7s2qq8RtTx2S2QIzubxgmrZ/view?usp=drivesdk)
 ## How it Works ?
 ### Project Working
   - Organizers can add an event by filling out a form with the event’s details. Once submitted, the event is added to the database and displayed on the events page. Each event is represented as a card, which can be clicked to view more details.
-  - The application also integrates with Google Maps to display an interactive map of the college. The locations of all events happening on a given day are marked on the map, providing a visual representation of event locations.   
- - Embed video of project demo
 
 ## Libraries used
 Please ensure `npm` is installed on your PC.
