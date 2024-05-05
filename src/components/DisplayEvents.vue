@@ -33,22 +33,39 @@ export default {
 
 
 <template>
-  <h1>The below are the event details</h1>
+  <h1 class="events-header">Events</h1>
   <p>Click to return to home</p>
   <button class="home-btn" @click="$router.push({ name: 'Home' })">Home</button>
-  <div>
+  <div class="cards-container">
       <!-- Event Cards -->
       <div class="event-card" v-for="event in eventList" :key="event.id">
-        <h2 class="card-title">Event Name: {{ event.eventName }}</h2>
-        <p>Date of Event: {{ event.date }}</p>
-        <p>Registration Fee: {{ event.regFee }}</p>
-        <p>Last Date to register: {{ event.regLastDate }}</p>
-
-        <div class="organizer-info">
-          <span class="dot" :style="{ backgroundColor: randomColor(event.organizerName) }"></span>
-          <span class="organizer-name">{{ event.organizerName }}</span>
+        <div class="card-header">
+          <div class="organizer-info">
+            <span class="dot" :style="{ backgroundColor: randomColor(event.organizerName) }"></span>
+            <span class="organizer-name">{{ event.organizerName }}</span>
+          </div>
+          <h2 class="card-title">{{ event.eventName }}</h2>
         </div>
-        <button class="card-button" @click="$router.push({ name: 'EventDetails', params: { id: event.id }  })">Learn More</button>
+        <div class="card-content">
+          <p class="card-descr">{{  event.furthDetails }}</p>
+          <!-- <p>Date of Event: {{ event.date }}</p>
+          <p>Registration Fee: {{ event.regFee }}</p>
+          <p>Last Date to register: {{ event.regLastDate }}</p> -->
+          <div>
+            <div class="dates-container">
+              <p>Register before:</p>
+              <p>{{ event.regLastDate }}</p>
+            </div>
+            <div class="dates-container">
+              <p>Event Date:</p>
+              <p>{{ event.date }}</p>
+            </div>
+            <div class="card-footer">
+              <h4 class="regfee">Rs. {{ event.regFee }}</h4>
+              <button class="card-button" @click="$router.push({ name: 'EventDetails', params: { id: event.id }  })">Details</button>
+            </div>
+          </div>
+        </div>
       </div>
   </div>
 
@@ -56,53 +73,96 @@ export default {
 </template>
 
 <style scoped>
+.cards-container {
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.events-header {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 20px;
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 500;
+}
 .event-card {
- border: 1px solid #ccc;
- border-radius: 5px;
- padding: 20px; 
- margin-bottom: 10px;
- box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
- max-width: 400px;
- display: inline-block;
- background-color: white;
- margin: 50px;
- color: #333; 
+  margin: 10px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #CBD5E1;
+  padding: 16px;
+  border-radius: 8px;
 }
+
+.card-header {
+  height: 30%;
+}
+
 .card-title{
-  color:blue;
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-family: 'Popins', sans-serif;
+  font-size: 2rem;
+  color: #9747FF;
 }
+
+.card-content {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-descr {
+  margin: 10px 0 10px 0;
+  color: #374151;
+}
+
+.dates-container {
+  display: flex;
+}
+
+.dates-container p {
+  flex: 1;
+  width: 50%;
+}
+
 .card-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius:4px;
-    margin-top: 10px;
+    font-size: 1rem;
+    padding: 5px 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #9747FF;
+    color: white;
+    font-family: 'Poppins';
+    border: 2px solid #9747FF;
+}
+
+.regfee {
+  color: #9747FF;
+  font-family: 'Poppins';
+  font-weight: 500;
+  border: 2px solid #9747FF;
+  display: inline-block;
+  padding: 5px 30px;
+  border-radius: 8px;
+}
+
+.card-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .card-button:hover {
-    background-color: #0056b3;
 }
 
 .organizer-info {
- display: flex;
- justify-content: flex-end;
- align-items: center;
 }
 .dot {
- width: 10px;
- height: 10px;
- border-radius: 50%;
- display: inline-block;
- margin-right: 5px;
 }
 .home-btn{
-  background-color: white;
-  padding:10px;
-  border-radius: 4px;
 }
 
 </style>
