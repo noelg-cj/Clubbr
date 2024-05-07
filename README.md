@@ -10,8 +10,12 @@
 **Clubbr** is a dynamic web application that serves as a one-stop solution for managing and viewing college club events.  It provides an intuitive interface for organizers to add, manage, and display events, enhancing the overall experience for both organizers and participants.
 ### Features
   1. **Event Management**: Organizers can easily add new events through a user-friendly form. These events are then dynamically displayed on the events page, providing a centralized location for all club activities.
+  ![image](https://github.com/noelg-cj/Clubbr/assets/76249580/80d055aa-6f38-4d5f-81ec-aec54a8f871b)
+
   2. **Detailed Event View**: Each event is represented as a card on the events page. Clicking on an event card opens up a detailed view, providing more information about the event such as date, time, location, and description.
-  3. **Interactive College Map**: This is the highlight of **clubbr**.The application features an interactive map of the college, powered by Google Maps. This map displays the locations of all events happening on a given day, providing a visual overview of event locations.
+  ![image](https://github.com/noelg-cj/Clubbr/assets/76249580/9f0b24f2-76a4-47e4-b7d1-b125c098695c)
+
+  3. **Interactive College Map**: This is the highlight of **clubbr**.The application features an interactive map of the college, powered by Google Maps. This map displays the locations of all events happening on a given day, providing a visual overview of event locations. (WIP)
 
 ## Team members
 1. [Noel George](https://github.com/noelg-cj)
@@ -20,10 +24,15 @@
 4. [Nanditha Dev](https://github.com/NandithaDev)
 
 ## Link to product walkthrough
+![image](https://github.com/noelg-cj/Clubbr/assets/76249580/774f3bdb-bd2c-48d5-9f5e-5c8ee642efb4)
+
 [link to video](https://drive.google.com/file/d/1vz8dIAvQt7s2qq8RtTx2S2QIzubxgmrZ/view?usp=drivesdk)
 ## How it Works ?
 ### Project Working
   - Organizers can add an event by filling out a form with the event’s details. Once submitted, the event is added to the database and displayed on the events page. Each event is represented as a card, which can be clicked to view more details.
+
+    ![image](https://github.com/noelg-cj/Clubbr/assets/76249580/480ff6a6-94c9-4747-9b00-b3ab871fb8f0)
+
 
 ## Libraries used
 Please ensure `npm` is installed on your PC.
