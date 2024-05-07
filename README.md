@@ -6,6 +6,7 @@
 
 
 # Clubbr
+![Banner](https://github.com/noelg-cj/Clubbr/assets/76249580/8c973e25-3e91-4d53-819d-be7231566af5)
 **Clubbr** is a dynamic web application that serves as a one-stop solution for managing and viewing college club events.  It provides an intuitive interface for organizers to add, manage, and display events, enhancing the overall experience for both organizers and participants.
 ### Features
   1. **Event Management**: Organizers can easily add new events through a user-friendly form. These events are then dynamically displayed on the events page, providing a centralized location for all club activities.
